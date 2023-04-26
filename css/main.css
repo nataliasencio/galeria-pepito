@@ -1,0 +1,109 @@
+/*reset*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* estilos generales */
+
+body{
+    background-color: #0e0d0d;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+/* estilos de pantallas de celulares desde 600px hacia abajo*/
+
+/* estilos del header*/
+.color-menu{
+    color:whitesmoke;
+}
+.color-menu:hover{
+    border-bottom: 2px solid tomato;
+    color: whitesmoke;
+}
+
+/* estilos de main */
+
+main div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main{
+    height: 70vh;
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 33%);
+    gap: 1rem;
+    margin: 1rem 3rem 3rem 3rem;
+}
+
+main .img-dos, .img-cinco{
+    display: none;
+}
+
+/* estilos de section */
+section div div div .imgcarrusel{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* estilos de footer */
+
+footer p{
+    text-align: center;
+    color: whitesmoke;
+}
+
+/* mediaqueries de tablet desde 600px hacia arriba*/
+
+@media screen and (min-width:600px){
+    /* estilos de main */
+
+    main{
+        /* display grid ya esta declarado antes no hace falta declarar de nuevo*/
+        grid-template-columns:repeat(2,1fr);
+        grid-template-rows:repeat(2,50%);
+    }
+
+    .img-uno, .img-tres{
+        grid-row: span 1;
+    }
+
+    .img-cuatro{
+        grid-column: span 2;
+    }
+
+}
+
+/* mediaqueries para pantallas de escritorios desde 1024 hacia arriba*/
+
+@media screen and (min-width:1024px){
+    main .img-dos, .img-cinco{
+        display: block;
+    }
+
+    main{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 40% 40% 20%;
+    }
+
+    .img-uno, .img-tres{
+        grid-row: span 2;
+    }
+
+    .img-dos, .img-cuatro{
+        grid-column: span 1;
+    }
+
+    .img-cinco{
+        grid-column: span 3;
+    }
+}
+ 
+   
